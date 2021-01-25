@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/LF_Linkar_Functions"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/LF_Linkar_Functions_Direct"/>
+	<classpathentry kind="lib" path="D:/DATOS/EWorkspace/LF_Linkar/out/Linkar.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
