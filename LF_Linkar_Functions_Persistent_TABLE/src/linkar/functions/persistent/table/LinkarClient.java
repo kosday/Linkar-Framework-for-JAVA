@@ -548,7 +548,7 @@ public class LinkarClient {
 	 * </pre>
      * @param filename File or table name defined in Linkar Schemas. Table notation is: MainTable[.MVTable[.SVTable]].
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'.
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM.
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. In NONE mode you may use the format LKFLDx where x is the attribute number.
      * @param sortClause Fragment of the phrase that indicates the selection order. If there is a selection rule Linkar will execute a SSELECT, otherwise Linkar will execute a SELECT. For example BY CUSTOMER.
      * @param tableOptions Different function options: rowHeaders, rowProperties, onlyVisibe, usePropertyNames, repeatValues, applyConversion, applyFormat, calculated, pagination, regPage, numPage.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
@@ -601,7 +601,7 @@ public class LinkarClient {
 	 * </pre>
      * @param filename File or table name defined in Linkar Schemas. Table notation is: MainTable[.MVTable[.SVTable]].
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'.
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM.
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. In NONE mode you may use the format LKFLDx where x is the attribute number.
      * @param sortClause Fragment of the phrase that indicates the selection order. If there is a selection rule Linkar will execute a SSELECT, otherwise Linkar will execute a SELECT. For example BY CUSTOMER.
      * @param tableOptions Different function options: rowHeaders, rowProperties, onlyVisibe, usePropertyNames, repeatValues, applyConversion, applyFormat, calculated, pagination, regPage, numPage.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
@@ -653,7 +653,7 @@ public class LinkarClient {
 	 * </pre>
      * @param filename File or table name defined in Linkar Schemas. Table notation is: MainTable[.MVTable[.SVTable]].
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'.
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM.
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. In NONE mode you may use the format LKFLDx where x is the attribute number.
      * @param sortClause Fragment of the phrase that indicates the selection order. If there is a selection rule Linkar will execute a SSELECT, otherwise Linkar will execute a SELECT. For example BY CUSTOMER.
      * @param tableOptions Different function options: rowHeaders, rowProperties, onlyVisibe, usePropertyNames, repeatValues, applyConversion, applyFormat, calculated, pagination, regPage, numPage.
      * @return The results of the operation.
@@ -703,7 +703,7 @@ public class LinkarClient {
 	 * </pre>
      * @param filename File or table name defined in Linkar Schemas. Table notation is: MainTable[.MVTable[.SVTable]].
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'.
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM.
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. In NONE mode you may use the format LKFLDx where x is the attribute number.
      * @param sortClause Fragment of the phrase that indicates the selection order. If there is a selection rule Linkar will execute a SSELECT, otherwise Linkar will execute a SELECT. For example BY CUSTOMER.
      * @return The results of the operation.
      * @throws Exception
@@ -752,7 +752,7 @@ public class LinkarClient {
 	 * </pre>
      * @param filename File or table name defined in Linkar Schemas. Table notation is: MainTable[.MVTable[.SVTable]].
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'.
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM.
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. In NONE mode you may use the format LKFLDx where x is the attribute number.
      * @return The results of the operation.
      * @throws Exception
      */
@@ -1381,7 +1381,7 @@ public class LinkarClient {
 	 * </pre>
      * @param filename File or table name defined in Linkar Schemas. Table notation is: MainTable[.MVTable[.SVTable]].
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'.
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM.
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. In NONE mode you may use the format LKFLDx where x is the attribute number.
      * @param sortClause Fragment of the phrase that indicates the selection order. If there is a selection rule Linkar will execute a SSELECT, otherwise Linkar will execute a SELECT. For example BY CUSTOMER.
      * @param tableOptions Different function options: rowHeaders, rowProperties, onlyVisibe, usePropertyNames, repeatValues, applyConversion, applyFormat, calculated, pagination, regPage, numPage.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
@@ -1439,7 +1439,7 @@ public class LinkarClient {
 	 * </pre>
      * @param filename File or table name defined in Linkar Schemas. Table notation is: MainTable[.MVTable[.SVTable]].
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'.
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM.
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. In NONE mode you may use the format LKFLDx where x is the attribute number.
      * @param sortClause Fragment of the phrase that indicates the selection order. If there is a selection rule Linkar will execute a SSELECT, otherwise Linkar will execute a SELECT. For example BY CUSTOMER.
      * @param tableOptions Different function options: rowHeaders, rowProperties, onlyVisibe, usePropertyNames, repeatValues, applyConversion, applyFormat, calculated, pagination, regPage, numPage.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
@@ -1490,7 +1490,7 @@ public class LinkarClient {
 	 * </pre>
      * @param filename File or table name defined in Linkar Schemas. Table notation is: MainTable[.MVTable[.SVTable]].
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'.
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM.
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. In NONE mode you may use the format LKFLDx where x is the attribute number.
      * @param sortClause Fragment of the phrase that indicates the selection order. If there is a selection rule Linkar will execute a SSELECT, otherwise Linkar will execute a SELECT. For example BY CUSTOMER.
      * @param tableOptions Different function options: rowHeaders, rowProperties, onlyVisibe, usePropertyNames, repeatValues, applyConversion, applyFormat, calculated, pagination, regPage, numPage.
      * @return The results of the operation.
@@ -1539,7 +1539,7 @@ public class LinkarClient {
 	 * </pre>
      * @param filename File or table name defined in Linkar Schemas. Table notation is: MainTable[.MVTable[.SVTable]].
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'.
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM.
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. In NONE mode you may use the format LKFLDx where x is the attribute number.
      * @param sortClause Fragment of the phrase that indicates the selection order. If there is a selection rule Linkar will execute a SSELECT, otherwise Linkar will execute a SELECT. For example BY CUSTOMER.
      * @return The results of the operation.
      */
@@ -1587,7 +1587,7 @@ public class LinkarClient {
 	 * </pre>
      * @param filename File or table name defined in Linkar Schemas. Table notation is: MainTable[.MVTable[.SVTable]].
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'.
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM.
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. In NONE mode you may use the format LKFLDx where x is the attribute number.
      * @return The results of the operation.
      */
     public CompletableFuture<String> GetTableAsync(String filename, String selectClause, String dictClause)

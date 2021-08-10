@@ -51,6 +51,27 @@ public class OperationArguments {
         String cmdArgs = customVars + ASCII_Chars.US_str + options + ASCII_Chars.US_str + inputData;
         return cmdArgs;
     }
+    
+    /**
+     * Compose the 3 items ( CUSTOMVARS, OPTIONS and INPUTDATA) of the Update operation.
+     * @param filename File name where you are going to write.
+     * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords. Use StringFunctions.ComposeUpdateBuffer function to compose this String.
+     * @param dictionaries List of dictionaries to write, separated by space. In MV output format is mandatory.
+     * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
+     * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
+     * @return A String ready to be used in Linkar.ExecuteDirectOperation and Linkar.ExecutePersistentOperation.
+     */
+    public static String GetUpdatePartialArgs(String filename, String records, String dictionaries, UpdateOptions updateOptions, String customVars)
+    {
+        if (updateOptions == null)
+            updateOptions = new UpdateOptions();
+
+        String options = updateOptions.GetString();
+        String inputData = filename + DBMV_Mark.AM + records + ASCII_Chars.FS_str + dictionaries;
+
+        String cmdArgs = customVars + ASCII_Chars.US_str + options + ASCII_Chars.US_str + inputData;
+        return cmdArgs;
+    }
 
     /**
      * Compose the 3 items (CUSTOMVARS, OPTIONS and INPUTDATA) of the New operation.

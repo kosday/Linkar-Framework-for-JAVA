@@ -47,7 +47,7 @@ public class Functions
 	 * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
 	 * @param filename File name to read.
 	 * @param recordIds It's the records codes list to read, separated by the Record Separator character (30). Use StringFunctions.ComposeRecordIds to compose this String
-	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer.
+	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
 	 * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
 	 * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
 	 * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
@@ -91,7 +91,7 @@ public class Functions
 	 * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
 	 * @param filename File name to read.
 	 * @param recordIds It's the records codes list to read, separated by the Record Separator character (30). Use StringFunctions.ComposeRecordIds to compose this String
-	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer.
+	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
 	 * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
 	 * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
 	 * @return The results of the operation.
@@ -134,7 +134,7 @@ public class Functions
 	 * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
 	 * @param filename File name to read.
 	 * @param recordIds It's the records codes list to read, separated by the Record Separator character (30). Use StringFunctions.ComposeRecordIds to compose this String
-	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer.
+	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
 	 * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
 	 * @return The results of the operation.
 	 * @throws Exception
@@ -174,7 +174,7 @@ public class Functions
 	 * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
 	 * @param filename File name to read.
 	 * @param recordIds It's the records codes list to read, separated by the Record Separator character (30). Use StringFunctions.ComposeRecordIds to compose this String
-	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer.
+	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
 	 * @return The results of the operation.
 	 * @throws Exception
 	 */
@@ -412,6 +412,203 @@ public class Functions
     public static String Update(CredentialOptions credentialOptions, String filename, String records) throws Exception
     {
         return Update(credentialOptions, filename, records, null);
+    }
+    
+    /* UPDATEPARTIAL */
+
+    /**
+     * Update one or more attributes of one or more file records, in a synchronous way with MV input and output format.
+     * <p>
+     * Inside the records argument, the recordIds and the modified records always must be specified. But the originalRecords not always.
+     * When {@link UpdateOptions} argument is specified and the {@link UpdateOptions#getOptimisticLockControl} property is set to true, a copy of the record must be provided before the modification (originalRecords argument)
+     * to use the Optimistic Lock technique. This copy can be obtained from a previous {@link #Read} operation. The database, before executing the modification, 
+     * reads the record and compares it with the copy in originalRecords, if they are equal the modified record is executed.
+     * But if they are not equal, it means that the record has been modified by other user and its modification will not be saved.
+     * The record will have to be read, modified and saved again.
+     * <p>
+	 * Example:
+     * <pre>
+	 * import linkar.*;
+	 * import linkar.functions.*;
+	 * import linkar.functions.direct.mv.*;
+	 * 
+	 * public class Test {
+	 *	
+	 *	public String MyUpdatePartial()
+	 *	{
+	 *		String result = "";
+	 *		try{
+	 *			CredentialOptions credentials = new CredentialOptions("127.0.0.1", "EPNAME", 1300, "admin", "admin");
+	 *			UpdateOptions options = new UpdateOptions();
+	 *			result = Functions.UpdatePartial(credentials, "LK.CUSTOMERS","2" + ASCII_Chars.FS_chr + "CUSTOMER UPDATE 2" + ASCII_Chars.FS_chr + "", "NAME", options, "", 60);			
+	 *		}
+	 *		catch (Exception ex)
+	 *		{
+	 *			String error = ex.getMessage();
+	 *			// Do something
+	 *		}
+	 *		return result;
+	 *	}
+	 * }
+	 * </pre>
+     * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
+     * @param filename File name where you are going to write.
+     * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords. Use StringFunctions.ComposeUpdateBuffer function to compose this String.
+     * @param dictionaries List of dictionaries to write, separated by space. In MV output format is mandatory. You may use the format LKFLDx where x is the attribute number.
+     * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
+     * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
+     * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
+     * @return The results of the operation.
+     * @throws Exception
+     */
+    public static String UpdatePartial(CredentialOptions credentialOptions, String filename, String records, String dictionaries, UpdateOptions updateOptions,
+        String customVars, int receiveTimeout) throws Exception
+    {
+        return DirectFunctions.UpdatePartial(credentialOptions, filename, records, dictionaries, updateOptions, DATAFORMAT_TYPE.MV, DATAFORMATCRU_TYPE.MV, customVars, receiveTimeout);
+    }
+    
+    /**
+     * Update one or more attributes of one or more file records, in a synchronous way with MV input and output format.
+     * <p>
+     * Inside the records argument, the recordIds and the modified records always must be specified. But the originalRecords not always.
+     * When {@link UpdateOptions} argument is specified and the {@link UpdateOptions#getOptimisticLockControl} property is set to true, a copy of the record must be provided before the modification (originalRecords argument)
+     * to use the Optimistic Lock technique. This copy can be obtained from a previous {@link #Read} operation. The database, before executing the modification, 
+     * reads the record and compares it with the copy in originalRecords, if they are equal the modified record is executed.
+     * But if they are not equal, it means that the record has been modified by other user and its modification will not be saved.
+     * The record will have to be read, modified and saved again.
+     * <p>
+	 * Example:
+     * <pre>
+	 * import linkar.*;
+	 * import linkar.functions.*;
+	 * import linkar.functions.direct.mv.*;
+	 * 
+	 * public class Test {
+	 *	
+	 *	public String MyUpdatePartial()
+	 *	{
+	 *		String result = "";
+	 *		try{
+	 *			CredentialOptions credentials = new CredentialOptions("127.0.0.1", "EPNAME", 1300, "admin", "admin");
+	 *			UpdateOptions options = new UpdateOptions();
+	 *			result = Functions.UpdatePartial(credentials, "LK.CUSTOMERS","2" + ASCII_Chars.FS_chr + "CUSTOMER UPDATE 2" + ASCII_Chars.FS_chr + "", "NAME", options, "");			
+	 *		}
+	 *		catch (Exception ex)
+	 *		{
+	 *			String error = ex.getMessage();
+	 *			// Do something
+	 *		}
+	 *		return result;
+	 *	}
+	 * }
+	 * </pre>
+     * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
+     * @param filename File name where you are going to write.
+     * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords. Use StringFunctions.ComposeUpdateBuffer function to compose this String.
+     * @param dictionaries List of dictionaries to write, separated by space. In MV output format is mandatory. You may use the format LKFLDx where x is the attribute number.
+     * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
+     * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
+     * @return The results of the operation.
+     * @throws Exception
+     */
+    public static String UpdatePartial(CredentialOptions credentialOptions, String filename, String records, String dictionaries, UpdateOptions updateOptions,
+        String customVars) throws Exception
+    {
+        return UpdatePartial(credentialOptions, filename, records, dictionaries, updateOptions, customVars, 0);
+    }
+    
+    /**
+     * Update one or more attributes of one or more file records, in a synchronous way with MV input and output format.
+     * <p>
+     * Inside the records argument, the recordIds and the modified records always must be specified. But the originalRecords not always.
+     * When {@link UpdateOptions} argument is specified and the {@link UpdateOptions#getOptimisticLockControl} property is set to true, a copy of the record must be provided before the modification (originalRecords argument)
+     * to use the Optimistic Lock technique. This copy can be obtained from a previous {@link #Read} operation. The database, before executing the modification, 
+     * reads the record and compares it with the copy in originalRecords, if they are equal the modified record is executed.
+     * But if they are not equal, it means that the record has been modified by other user and its modification will not be saved.
+     * The record will have to be read, modified and saved again.
+     * <p>
+	 * Example:
+     * <pre>
+	 * import linkar.*;
+	 * import linkar.functions.*;
+	 * import linkar.functions.direct.mv.*;
+	 * 
+	 * public class Test {
+	 *	
+	 *	public String MyUpdatePartial()
+	 *	{
+	 *		String result = "";
+	 *		try{
+	 *			CredentialOptions credentials = new CredentialOptions("127.0.0.1", "EPNAME", 1300, "admin", "admin");
+	 *			UpdateOptions options = new UpdateOptions();
+	 *			result = Functions.UpdatePartial(credentials, "LK.CUSTOMERS","2" + ASCII_Chars.FS_chr + "CUSTOMER UPDATE 2" + ASCII_Chars.FS_chr + "", "NAME", options);			
+	 *		}
+	 *		catch (Exception ex)
+	 *		{
+	 *			String error = ex.getMessage();
+	 *			// Do something
+	 *		}
+	 *		return result;
+	 *	}
+	 * }
+	 * </pre>
+     * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
+     * @param filename File name where you are going to write.
+     * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords. Use StringFunctions.ComposeUpdateBuffer function to compose this String.
+     * @param dictionaries List of dictionaries to write, separated by space. In MV output format is mandatory. You may use the format LKFLDx where x is the attribute number.
+     * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
+     * @return The results of the operation.
+     * @throws Exception
+     */
+    public static String UpdatePartial(CredentialOptions credentialOptions, String filename, String records, String dictionaries, UpdateOptions updateOptions) throws Exception
+    {
+        return UpdatePartial(credentialOptions, filename, records, dictionaries, updateOptions, "");
+    }
+    
+    /**
+     * Update one or more attributes of one or more file records, in a synchronous way with MV input and output format.
+     * <p>
+     * Inside the records argument, the recordIds and the modified records always must be specified. But the originalRecords not always.
+     * When {@link UpdateOptions} argument is specified and the {@link UpdateOptions#getOptimisticLockControl} property is set to true, a copy of the record must be provided before the modification (originalRecords argument)
+     * to use the Optimistic Lock technique. This copy can be obtained from a previous {@link #Read} operation. The database, before executing the modification, 
+     * reads the record and compares it with the copy in originalRecords, if they are equal the modified record is executed.
+     * But if they are not equal, it means that the record has been modified by other user and its modification will not be saved.
+     * The record will have to be read, modified and saved again.
+     * <p>
+	 * Example:
+     * <pre>
+	 * import linkar.*;
+	 * import linkar.functions.*;
+	 * import linkar.functions.direct.mv.*;
+	 * 
+	 * public class Test {
+	 *	
+	 *	public String MyUpdatePartial()
+	 *	{
+	 *		String result = "";
+	 *		try{
+	 *			CredentialOptions credentials = new CredentialOptions("127.0.0.1", "EPNAME", 1300, "admin", "admin");
+	 *			result = Functions.UpdatePartial(credentials, "LK.CUSTOMERS","2" + ASCII_Chars.FS_chr + "CUSTOMER UPDATE 2" + ASCII_Chars.FS_chr + "", "NAME");			
+	 *		}
+	 *		catch (Exception ex)
+	 *		{
+	 *			String error = ex.getMessage();
+	 *			// Do something
+	 *		}
+	 *		return result;
+	 *	}
+	 * }
+	 * </pre>
+     * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
+     * @param filename File name where you are going to write.
+     * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords. Use StringFunctions.ComposeUpdateBuffer function to compose this String.
+     * @param dictionaries List of dictionaries to write, separated by space. In MV output format is mandatory. You may use the format LKFLDx where x is the attribute number.
+     * @return The results of the operation.
+     * @throws Exception
+     */
+    public static String UpdatePartial(CredentialOptions credentialOptions, String filename, String records, String dictionaries) throws Exception
+    {
+        return UpdatePartial(credentialOptions, filename, records, dictionaries, null);
     }
     
     /* NEW */
@@ -825,7 +1022,7 @@ public class Functions
      * @param filename File name where the select operation will be perform. For example LK.ORDERS
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'
      * @param sortClause Fragment of the phrase that indicates the selection order. If there is a selection rule, Linkar will execute a SSELECT, otherwise Linkar will execute a SELECT. For example BY CUSTOMER
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
@@ -878,7 +1075,7 @@ public class Functions
      * @param filename File name where the select operation will be perform. For example LK.ORDERS
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'
      * @param sortClause Fragment of the phrase that indicates the selection order. If there is a selection rule, Linkar will execute a SSELECT, otherwise Linkar will execute a SELECT. For example BY CUSTOMER
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
@@ -930,7 +1127,7 @@ public class Functions
      * @param filename File name where the select operation will be perform. For example LK.ORDERS
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'
      * @param sortClause Fragment of the phrase that indicates the selection order. If there is a selection rule, Linkar will execute a SSELECT, otherwise Linkar will execute a SELECT. For example BY CUSTOMER
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
      * @return The results of the operation.
@@ -979,7 +1176,7 @@ public class Functions
      * @param filename File name where the select operation will be perform. For example LK.ORDERS
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'
      * @param sortClause Fragment of the phrase that indicates the selection order. If there is a selection rule, Linkar will execute a SSELECT, otherwise Linkar will execute a SELECT. For example BY CUSTOMER
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @return The results of the operation.
      * @throws Exception
@@ -1027,7 +1224,7 @@ public class Functions
      * @param filename File name where the select operation will be perform. For example LK.ORDERS
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'
      * @param sortClause Fragment of the phrase that indicates the selection order. If there is a selection rule, Linkar will execute a SSELECT, otherwise Linkar will execute a SELECT. For example BY CUSTOMER
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @return The results of the operation.
      * @throws Exception
      */
@@ -2333,7 +2530,7 @@ public class Functions
 	 * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
 	 * @param filename File name to read
 	 * @param records It's the records codes list to read, separated by the Record Separator character (30). Use StringFunctions.ComposeRecordIds to compose this String
-	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer.
+	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
 	 * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
 	 * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
 	 * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
@@ -2383,7 +2580,7 @@ public class Functions
 	 * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
 	 * @param filename File name to read
 	 * @param records It's the records codes list to read, separated by the Record Separator character (30). Use StringFunctions.ComposeRecordIds to compose this String
-	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer.
+	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
 	 * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
 	 * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
 	 * @return The results of the operation.
@@ -2426,7 +2623,7 @@ public class Functions
 	 * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
 	 * @param filename File name to read
 	 * @param records It's the records codes list to read, separated by the Record Separator character (30). Use StringFunctions.ComposeRecordIds to compose this String
-	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer.
+	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
 	 * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
 	 * @return The results of the operation.
 	 * @throws Exception
@@ -2466,7 +2663,7 @@ public class Functions
 	 * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
 	 * @param filename File name to read
 	 * @param records It's the records codes list to read, separated by the Record Separator character (30). Use StringFunctions.ComposeRecordIds to compose this String
-	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer.
+	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
 	 * @return The results of the operation.
 	 * @throws Exception
 	 */
@@ -2706,6 +2903,205 @@ public class Functions
     public static CompletableFuture<String> UpdateAsync(CredentialOptions credentialOptions, String filename, String records)
     {       
     	return UpdateAsync(credentialOptions, filename, records, null);
+    }
+    
+    /* UPDATEPARTIAL */
+    
+    /**
+     * Update one or several records of a file, in a asynchronous way with MV input and output format.
+     * <p>
+     * Inside the records argument, the recordIds and the modified records always must be specified. But the originalRecords not always.
+     * When {@link UpdateOptions} argument is specified and the {@link UpdateOptions#getOptimisticLockControl} property is set to true, a copy of the record must be provided before the modification (originalRecords argument)
+     * to use the Optimistic Lock technique. This copy can be obtained from a previous {@link #ReadAsync} operation. The database, before executing the modification, 
+     * reads the record and compares it with the copy in originalRecords, if they are equal the modified record is executed.
+     * But if they are not equal, it means that the record has been modified by other user and its modification will not be saved.
+     * The record will have to be read, modified and saved again.
+     * <p>
+	 * Example:
+     * <pre>
+	 * import linkar.*;
+	 * import linkar.functions.*;
+	 * import linkar.functions.direct.mv.*;
+	 * 
+	 * public class Test {
+	 *	
+	 *	public String MyUpdatePartialAsync()
+	 *	{
+	 *		String result = "";
+	 *		try{
+	 *			CredentialOptions credentials = new CredentialOptions("127.0.0.1", "EPNAME", 1300, "admin", "admin");
+	 *			UpdateOptions options = new UpdateOptions();
+	 *			result = Functions.UpdatePartialAsync(credentials, "LK.CUSTOMERS","2" + ASCII_Chars.FS_chr + "CUSTOMER UPDATE 2" + ASCII_Chars.FS_chr + "", "NAME", options, "", 60).getNow(result);			
+	 *		}
+	 *		catch (Exception ex)
+	 *		{
+	 *			String error = ex.getMessage();
+	 *			// Do something
+	 *		}
+	 *		return result;
+	 *	}
+	 * }
+	 * </pre>
+     * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
+     * @param filename File name where you are going to write.
+     * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords. Use StringFunctions.ComposeUpdateBuffer function to compose this String.
+     * @param dictionaries List of dictionaries to write, separated by space. In MV output format is mandatory. You may use the format LKFLDx where x is the attribute number.
+     * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
+     * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
+     * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
+     * @return The results of the operation.
+     */
+    public static CompletableFuture<String> UpdatePartialAsync(CredentialOptions credentialOptions, String filename, String records, String dictionaries, UpdateOptions updateOptions,
+        String customVars, int receiveTimeout)
+    {       
+    	return CompletableFuture.supplyAsync(() -> {
+				try {
+					return Functions.UpdatePartial(credentialOptions, filename, records, dictionaries, updateOptions, customVars, receiveTimeout);
+				} catch (Exception e) {
+					throw new CompletionException(e);
+				}
+		});
+    }
+    
+    /**
+     * Update one or several records of a file, in a asynchronous way with MV input and output format.
+     * <p>
+     * Inside the records argument, the recordIds and the modified records always must be specified. But the originalRecords not always.
+     * When {@link UpdateOptions} argument is specified and the {@link UpdateOptions#getOptimisticLockControl} property is set to true, a copy of the record must be provided before the modification (originalRecords argument)
+     * to use the Optimistic Lock technique. This copy can be obtained from a previous {@link #ReadAsync} operation. The database, before executing the modification, 
+     * reads the record and compares it with the copy in originalRecords, if they are equal the modified record is executed.
+     * But if they are not equal, it means that the record has been modified by other user and its modification will not be saved.
+     * The record will have to be read, modified and saved again.
+     * <p>
+	 * Example:
+     * <pre>
+	 * import linkar.*;
+	 * import linkar.functions.*;
+	 * import linkar.functions.direct.mv.*;
+	 * 
+	 * public class Test {
+	 *	
+	 *	public String MyUpdatePartialAsync()
+	 *	{
+	 *		String result = "";
+	 *		try{
+	 *			CredentialOptions credentials = new CredentialOptions("127.0.0.1", "EPNAME", 1300, "admin", "admin");
+	 *			UpdateOptions options = new UpdateOptions();
+	 *			result = Functions.UpdatePartialAsync(credentials, "LK.CUSTOMERS","2" + ASCII_Chars.FS_chr + "CUSTOMER UPDATE 2" + ASCII_Chars.FS_chr + "", "NAME", options, "").getNow(result);			
+	 *		}
+	 *		catch (Exception ex)
+	 *		{
+	 *			String error = ex.getMessage();
+	 *			// Do something
+	 *		}
+	 *		return result;
+	 *	}
+	 * }
+	 * </pre>
+     * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
+     * @param filename File name where you are going to write.
+     * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords. Use StringFunctions.ComposeUpdateBuffer function to compose this String.
+     * @param dictionaries List of dictionaries to write, separated by space. In MV output format is mandatory. You may use the format LKFLDx where x is the attribute number.
+     * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
+     * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
+     * @return The results of the operation.
+     */
+    public static CompletableFuture<String> UpdatePartialAsync(CredentialOptions credentialOptions, String filename, String records, String dictionaries, UpdateOptions updateOptions,
+        String customVars)
+    {       
+    	return UpdatePartialAsync(credentialOptions, filename, records, dictionaries, updateOptions, customVars, 0);
+    }
+    
+    /**
+     * Update one or several records of a file, in a asynchronous way with MV input and output format.
+     * <p>
+     * Inside the records argument, the recordIds and the modified records always must be specified. But the originalRecords not always.
+     * When {@link UpdateOptions} argument is specified and the {@link UpdateOptions#getOptimisticLockControl} property is set to true, a copy of the record must be provided before the modification (originalRecords argument)
+     * to use the Optimistic Lock technique. This copy can be obtained from a previous {@link #ReadAsync} operation. The database, before executing the modification, 
+     * reads the record and compares it with the copy in originalRecords, if they are equal the modified record is executed.
+     * But if they are not equal, it means that the record has been modified by other user and its modification will not be saved.
+     * The record will have to be read, modified and saved again.
+     * <p>
+	 * Example:
+     * <pre>
+	 * import linkar.*;
+	 * import linkar.functions.*;
+	 * import linkar.functions.direct.mv.*;
+	 * 
+	 * public class Test {
+	 *	
+	 *	public String MyUpdatePartialAsync()
+	 *	{
+	 *		String result = "";
+	 *		try{
+	 *			CredentialOptions credentials = new CredentialOptions("127.0.0.1", "EPNAME", 1300, "admin", "admin");
+	 *			UpdateOptions options = new UpdateOptions();
+	 *			result = Functions.UpdatePartialAsync(credentials, "LK.CUSTOMERS","2" + ASCII_Chars.FS_chr + "CUSTOMER UPDATE 2" + ASCII_Chars.FS_chr + "", "NAME", options).getNow(result);			
+	 *		}
+	 *		catch (Exception ex)
+	 *		{
+	 *			String error = ex.getMessage();
+	 *			// Do something
+	 *		}
+	 *		return result;
+	 *	}
+	 * }
+	 * </pre>
+     * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
+     * @param filename File name where you are going to write.
+     * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords. Use StringFunctions.ComposeUpdateBuffer function to compose this String.
+     * @param dictionaries List of dictionaries to write, separated by space. In MV output format is mandatory. You may use the format LKFLDx where x is the attribute number.
+     * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
+     * @return The results of the operation.
+     */
+    public static CompletableFuture<String> UpdatePartialAsync(CredentialOptions credentialOptions, String filename, String records, String dictionaries, UpdateOptions updateOptions)
+    {       
+    	return UpdatePartialAsync(credentialOptions, filename, records, dictionaries, updateOptions, "");
+    }
+    
+    /**
+     * Update one or several records of a file, in a asynchronous way with MV input and output format.
+     * <p>
+     * Inside the records argument, the recordIds and the modified records always must be specified. But the originalRecords not always.
+     * When {@link UpdateOptions} argument is specified and the {@link UpdateOptions#getOptimisticLockControl} property is set to true, a copy of the record must be provided before the modification (originalRecords argument)
+     * to use the Optimistic Lock technique. This copy can be obtained from a previous {@link #ReadAsync} operation. The database, before executing the modification, 
+     * reads the record and compares it with the copy in originalRecords, if they are equal the modified record is executed.
+     * But if they are not equal, it means that the record has been modified by other user and its modification will not be saved.
+     * The record will have to be read, modified and saved again.
+     * <p>
+	 * Example:
+     * <pre>
+	 * import linkar.*;
+	 * import linkar.functions.*;
+	 * import linkar.functions.direct.mv.*;
+	 * 
+	 * public class Test {
+	 *	
+	 *	public String MyUpdatePartialAsync()
+	 *	{
+	 *		String result = "";
+	 *		try{
+	 *			CredentialOptions credentials = new CredentialOptions("127.0.0.1", "EPNAME", 1300, "admin", "admin");
+	 *			result = Functions.UpdatePartialAsync(credentials, "LK.CUSTOMERS","2" + ASCII_Chars.FS_chr + "CUSTOMER UPDATE 2" + ASCII_Chars.FS_chr + "", "NAME").getNow(result);			
+	 *		}
+	 *		catch (Exception ex)
+	 *		{
+	 *			String error = ex.getMessage();
+	 *			// Do something
+	 *		}
+	 *		return result;
+	 *	}
+	 * }
+	 * </pre>
+     * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
+     * @param filename File name where you are going to write.
+     * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords. Use StringFunctions.ComposeUpdateBuffer function to compose this String.
+     * @param dictionaries List of dictionaries to write, separated by space. In MV output format is mandatory. You may use the format LKFLDx where x is the attribute number.
+     * @return The results of the operation.
+     */
+    public static CompletableFuture<String> UpdatePartialAsync(CredentialOptions credentialOptions, String filename, String records, String dictionaries)
+    {       
+    	return UpdatePartialAsync(credentialOptions, filename, records, dictionaries, null);
     }
     
     /* NEW */
@@ -3123,7 +3519,7 @@ public class Functions
      * @param filename File name where the select operation will be perform. For example LK.ORDERS
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'
      * @param sortClause Fragment of the phrase that indicates the selection order. If there is a selection rule, Linkar will execute a SSELECT, otherwise Linkar will execute a SELECT. For example BY CUSTOMER
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
@@ -3181,7 +3577,7 @@ public class Functions
      * @param filename File name where the select operation will be perform. For example LK.ORDERS
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'
      * @param sortClause Fragment of the phrase that indicates the selection order. If there is a selection rule, Linkar will execute a SSELECT, otherwise Linkar will execute a SELECT. For example BY CUSTOMER
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
@@ -3232,7 +3628,7 @@ public class Functions
      * @param filename File name where the select operation will be perform. For example LK.ORDERS
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'
      * @param sortClause Fragment of the phrase that indicates the selection order. If there is a selection rule, Linkar will execute a SSELECT, otherwise Linkar will execute a SELECT. For example BY CUSTOMER
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
      * @return The results of the operation.
@@ -3280,7 +3676,7 @@ public class Functions
      * @param filename File name where the select operation will be perform. For example LK.ORDERS
      * @param selectClause Fragment of the phrase that indicate the selection condition. For example WITH CUSTOMER = '1'
      * @param sortClause Fragment of the phrase that indicates the selection order. If there is a selection rule, Linkar will execute a SSELECT, otherwise Linkar will execute a SELECT. For example BY CUSTOMER
-     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM
+     * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @return The results of the operation.
      */
