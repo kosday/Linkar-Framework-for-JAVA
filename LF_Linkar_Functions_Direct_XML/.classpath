@@ -4,6 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/LF_Linkar_Functions"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/LF_Linkar_Functions_Direct"/>
-	<classpathentry kind="lib" path="D:/DATOS/EWorkspace/LF_Linkar/out/Linkar.jar"/>
+	<classpathentry kind="lib" path="/LF_Linkar/lib/Linkar.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
