@@ -377,7 +377,7 @@ public class MvOperations
     		String cstr = String.valueOf(DBMV_Mark.VM);
     		for (int index = 0; index < value; index++)
     			createdstr += cstr;
-    		str = createdstr;
+    		str = str.substring(0,i) + createdstr + str.substring(i);
             i += value;
         }
 
@@ -401,7 +401,7 @@ public class MvOperations
     		String cstr = String.valueOf(DBMV_Mark.SM);
     		for (int index = 0; index < subvalue; index++)
     			createdstr += cstr;
-    		str = createdstr;
+    		str = str.substring(0,i) + createdstr + str.substring(i);
             i += subvalue;
         }
 

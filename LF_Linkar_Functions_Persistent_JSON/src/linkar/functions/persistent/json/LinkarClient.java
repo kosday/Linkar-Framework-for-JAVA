@@ -25,7 +25,7 @@ public class LinkarClient
     
     /**
      * Initializes a new instance of the LinkarClient class.
-     * @param It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely). When the receiveTimeout argument is omitted in any operation, the value set here will be applied.
+     * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely). When the receiveTimeout argument is omitted in any operation, the value set here will be applied.
      */
     public LinkarClient(int receiveTimeout)
     {
