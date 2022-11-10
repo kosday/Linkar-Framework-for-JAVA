@@ -2006,6 +2006,7 @@ public class Functions
      * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
      * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
      * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
      * </ul>
      * <p>
 	 * Example:
@@ -2064,6 +2065,7 @@ public class Functions
      * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
      * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
      * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
      * </ul>
      * <p>
 	 * Example:
@@ -2298,7 +2300,7 @@ public class Functions
     public static String LkProperties(CredentialOptions credentialOptions, String filename, LkPropertiesOptions lkPropertiesOptions,
         String customVars, int receiveTimeout) throws Exception
     {
-        return DirectFunctions.LkProperties(credentialOptions, filename, lkPropertiesOptions, DATAFORMATSCH_TYPE.MV, customVars, receiveTimeout);
+        return DirectFunctions.LkProperties(credentialOptions, filename, lkPropertiesOptions, DATAFORMATSCHPROP_TYPE.MV, customVars, receiveTimeout);
     }
     
     /**
@@ -4507,6 +4509,7 @@ public class Functions
      * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
      * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
      * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
      * </ul>
      * <p>
 	 * Example:
@@ -4570,6 +4573,7 @@ public class Functions
      * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
      * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
      * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
      * </ul>
      * <p>
 	 * Example:

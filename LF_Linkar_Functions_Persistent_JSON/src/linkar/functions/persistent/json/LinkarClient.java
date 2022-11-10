@@ -166,7 +166,7 @@ public class LinkarClient
      * @param records It's the records codes list to read
      * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
      * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -221,7 +221,7 @@ public class LinkarClient
      * @param records It's the records codes list to read
      * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
      * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
@@ -275,7 +275,7 @@ public class LinkarClient
      * @param records It's the records codes list to read
      * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
      * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @return The results of the operation.
      * @throws Exception
      */
@@ -486,7 +486,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -550,7 +550,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
@@ -613,7 +613,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @return The results of the operation.
      * @throws Exception
      */
@@ -792,7 +792,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -854,7 +854,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
@@ -915,7 +915,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @return The results of the operation.
      * @throws Exception
      */
@@ -1087,7 +1087,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to write. Inside this String are the recordIds, and the records.
      * @param newOptions Object that defines the following writing options of the Function: recordIdType, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -1148,7 +1148,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to write. Inside this String are the recordIds, and the records.
      * @param newOptions Object that defines the following writing options of the Function: recordIdType, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
@@ -1208,7 +1208,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to write. Inside this String are the recordIds, and the records.
      * @param newOptions Object that defines the following writing options of the Function: recordIdType, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @return The results of the operation.
      * @throws Exception
      */
@@ -1611,7 +1611,7 @@ public class LinkarClient
      * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -1667,7 +1667,7 @@ public class LinkarClient
      * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
@@ -1722,7 +1722,7 @@ public class LinkarClient
      * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @return The results of the operation.
      * @throws Exception
      */
@@ -2723,6 +2723,7 @@ public class LinkarClient
 	 * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
 	 * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
 	 * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
 	 * </ul>
      * <p>
 	 * Example:
@@ -2783,6 +2784,7 @@ public class LinkarClient
 	 * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
 	 * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
 	 * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
 	 * </ul>
      * <p>
 	 * Example:
@@ -3004,7 +3006,7 @@ public class LinkarClient
 	 * 			LinkarClient client = new LinkarClient();
 	 * 			client.Login(credentials);
 	 *			LkPropertiesOptions options = new LkPropertiesOptions();
-	 *			result = client.LkProperties("LK.CUSTOMERS",options, "", 60);
+	 *			result = client.LkProperties("LK.CUSTOMERS", options, JSON_FORMAT.JSON, "", 60);
 	 * 			client.Logout();			
 	 *		}
 	 *		catch (Exception ex)
@@ -3018,14 +3020,22 @@ public class LinkarClient
 	 * </pre>
      * @param filename File name to LkProperties
      * @param lkPropertiesOptions This object defines the different options in base of the asked Schema Type: LKSCHEMAS, SQLMODE o DICTIONARIES.
+	 * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
      * @throws Exception
      */
-    public String LkProperties(String filename, LkPropertiesOptions lkPropertiesOptions, String customVars, int receiveTimeout) throws Exception
+    public String LkProperties(String filename, LkPropertiesOptions lkPropertiesOptions,
+		JSON_FORMAT jsonFormat, String customVars, int receiveTimeout) throws Exception
     {
-        return this.LinkarClt.LkProperties(filename, lkPropertiesOptions, DATAFORMATSCH_TYPE.JSON, customVars, receiveTimeout);
+		DATAFORMATSCHPROP_TYPE outputFormat = DATAFORMATSCHPROP_TYPE.JSON;
+		if(jsonFormat == JSON_FORMAT.JSON_DICT)
+			outputFormat = DATAFORMATSCHPROP_TYPE.JSON_DICT;
+		else if(jsonFormat == JSON_FORMAT.JSON_SCH)
+			outputFormat = DATAFORMATSCHPROP_TYPE.JSON_SCH;
+		
+        return this.LinkarClt.LkProperties(filename, lkPropertiesOptions, outputFormat, customVars, receiveTimeout);
     }
     
     /**
@@ -3047,7 +3057,7 @@ public class LinkarClient
 	 * 			LinkarClient client = new LinkarClient();
 	 * 			client.Login(credentials);
 	 *			LkPropertiesOptions options = new LkPropertiesOptions();
-	 *			result = client.LkProperties("LK.CUSTOMERS",options, "");
+	 *			result = client.LkProperties("LK.CUSTOMERS", options, JSON_FORMAT.JSON, "");
 	 * 			client.Logout();			
 	 *		}
 	 *		catch (Exception ex)
@@ -3061,13 +3071,58 @@ public class LinkarClient
 	 * </pre>
      * @param filename File name to LkProperties
      * @param lkPropertiesOptions This object defines the different options in base of the asked Schema Type: LKSCHEMAS, SQLMODE o DICTIONARIES.
+	 * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
      */
-    public String LkProperties(String filename, LkPropertiesOptions lkPropertiesOptions, String customVars) throws Exception
+    public String LkProperties(String filename, LkPropertiesOptions lkPropertiesOptions,
+		JSON_FORMAT jsonFormat, String customVars) throws Exception
     {
-        return LkProperties(filename, lkPropertiesOptions, customVars, 0);
+        return LkProperties(filename, lkPropertiesOptions, jsonFormat, customVars, 0);
+    }
+
+    /**
+     * Returns the Schema properties list defined in Linkar Schemas or the file dictionaries, in a synchronous way with JSON output format.
+     * <p>
+	 * Example:
+     * <pre>
+	 * import linkar.*;
+	 * import linkar.functions.*;
+	 * import linkar.functions.persistent.json.*;
+	 * 
+	 * public class Test {
+	 *	
+	 *	public String MyLkProperties()
+	 *	{
+	 *		String result = "";
+	 *		try{
+	 *			CredentialOptions credentials = new CredentialOptions("127.0.0.1", "EPNAME", 11300, "admin", "admin");
+	 * 			LinkarClient client = new LinkarClient();
+	 * 			client.Login(credentials);
+	 *			LkPropertiesOptions options = new LkPropertiesOptions();
+	 *			result = client.LkProperties("LK.CUSTOMERS", options, JSON_FORMAT.JSON);
+	 * 			client.Logout();			
+	 *		}
+	 *		catch (Exception ex)
+	 *		{
+	 *			String error = ex.getMessage();
+	 *			// Do something
+	 *		}
+	 *		return result;
+	 *	}
+	 * }
+	 * </pre>
+     * @param filename File name to LkProperties
+     * @param lkPropertiesOptions This object defines the different options in base of the asked Schema Type: LKSCHEMAS, SQLMODE o DICTIONARIES.
+	 * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
+     * @return The results of the operation.
+     * @throws Exception
+     */
+    public String LkProperties(String filename, LkPropertiesOptions lkPropertiesOptions,
+		JSON_FORMAT jsonFormat) throws Exception
+    {
+        return LkProperties(filename, lkPropertiesOptions, jsonFormat, "");
     }
     
     /**
@@ -3089,7 +3144,7 @@ public class LinkarClient
 	 * 			LinkarClient client = new LinkarClient();
 	 * 			client.Login(credentials);
 	 *			LkPropertiesOptions options = new LkPropertiesOptions();
-	 *			result = client.LkProperties("LK.CUSTOMERS",options);
+	 *			result = client.LkProperties("LK.CUSTOMERS", options);
 	 * 			client.Logout();			
 	 *		}
 	 *		catch (Exception ex)
@@ -3108,7 +3163,7 @@ public class LinkarClient
      */
     public String LkProperties(String filename, LkPropertiesOptions lkPropertiesOptions) throws Exception
     {
-        return LkProperties(filename, lkPropertiesOptions, "");
+        return LkProperties(filename, lkPropertiesOptions, JSON_FORMAT.JSON);
     }
     
     /**
@@ -3374,7 +3429,7 @@ public class LinkarClient
      * @param records It's the records codes list to read
      * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
      * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -3435,7 +3490,7 @@ public class LinkarClient
      * @param records It's the records codes list to read
      * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
      * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
@@ -3489,7 +3544,7 @@ public class LinkarClient
      * @param records It's the records codes list to read
      * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
      * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @return The results of the operation.
      * @throws Exception
      */
@@ -3700,7 +3755,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -3770,7 +3825,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
@@ -3833,7 +3888,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @return The results of the operation.
      * @throws Exception
      */
@@ -4012,7 +4067,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -4080,7 +4135,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
@@ -4141,7 +4196,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @return The results of the operation.
      * @throws Exception
      */
@@ -4313,7 +4368,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to write. Inside this String are the recordIds, and the records.
      * @param newOptions Object that defines the following writing options of the Function: recordIdType, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -4378,7 +4433,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to write. Inside this String are the recordIds, and the records.
      * @param newOptions Object that defines the following writing options of the Function: recordIdType, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
@@ -4436,7 +4491,7 @@ public class LinkarClient
      * @param filename File name where you are going to write.
      * @param records Are the records you want to write. Inside this String are the recordIds, and the records.
      * @param newOptions Object that defines the following writing options of the Function: recordIdType, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @return The results of the operation.
      * @throws Exception
      */
@@ -4840,7 +4895,7 @@ public class LinkarClient
      * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -4902,7 +4957,7 @@ public class LinkarClient
      * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
@@ -4958,7 +5013,7 @@ public class LinkarClient
      * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
-     * @param jsonFormat Different JSON output formats.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @return The results of the operation.
      * @throws Exception
      */
@@ -5981,6 +6036,7 @@ public class LinkarClient
 	 * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
 	 * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
 	 * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
 	 * </ul>
      * <p>
 	 * Example:
@@ -6047,6 +6103,7 @@ public class LinkarClient
 	 * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
 	 * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
 	 * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
 	 * </ul>
      * <p>
 	 * Example:
@@ -6288,16 +6345,24 @@ public class LinkarClient
 	 * </pre>
      * @param filename File name to LkProperties
      * @param lkPropertiesOptions This object defines the different options in base of the asked Schema Type: LKSCHEMAS, SQLMODE o DICTIONARIES.
-     * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
+     * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
+	 * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
      * @throws Exception
      */
-    public CompletableFuture<String> LkPropertiesAsync(String filename, LkPropertiesOptions lkPropertiesOptions, String customVars, int receiveTimeout) throws Exception
+    public CompletableFuture<String> LkPropertiesAsync(String filename, LkPropertiesOptions lkPropertiesOptions,
+		JSON_FORMAT jsonFormat, String customVars, int receiveTimeout) throws Exception
     {
     	return CompletableFuture.supplyAsync(() -> {
 				try {
-					return this.LinkarClt.LkProperties(filename, lkPropertiesOptions, DATAFORMATSCH_TYPE.JSON, customVars, receiveTimeout);
+					DATAFORMATSCHPROP_TYPE outputFormat = DATAFORMATSCHPROP_TYPE.JSON;
+					if(jsonFormat == JSON_FORMAT.JSON_DICT)
+						outputFormat = DATAFORMATSCHPROP_TYPE.JSON_DICT;
+					else if(jsonFormat == JSON_FORMAT.JSON_SCH)
+						outputFormat = DATAFORMATSCHPROP_TYPE.JSON_SCH;
+									
+					return this.LinkarClt.LkProperties(filename, lkPropertiesOptions, outputFormat, customVars, receiveTimeout);
 				} catch (Exception e) {
 					throw new CompletionException(e);
 				}
@@ -6323,7 +6388,7 @@ public class LinkarClient
 	 * 			LinkarClient client = new LinkarClient();
 	 * 			client.Login(credentials);
 	 *			LkPropertiesOptions options = new LkPropertiesOptions();
-	 *			result = client.LkPropertiesAsync("LK.CUSTOMERS",options, "").getNow(result);
+	 *			result = client.LkPropertiesAsync("LK.CUSTOMERS", options, JSON_FORMAT.JSON "").getNow(result);
 	 * 			client.Logout();			
 	 *		}
 	 *		catch (Exception ex)
@@ -6337,13 +6402,58 @@ public class LinkarClient
 	 * </pre>
      * @param filename File name to LkProperties
      * @param lkPropertiesOptions This object defines the different options in base of the asked Schema Type: LKSCHEMAS, SQLMODE o DICTIONARIES.
+	 * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
      */
-    public CompletableFuture<String> LkPropertiesAsync(String filename, LkPropertiesOptions lkPropertiesOptions, String customVars) throws Exception
+    public CompletableFuture<String> LkPropertiesAsync(String filename, LkPropertiesOptions lkPropertiesOptions,
+		JSON_FORMAT jsonFormat, String customVars) throws Exception
     {
-    	return LkPropertiesAsync(filename, lkPropertiesOptions, customVars, 0);
+    	return LkPropertiesAsync(filename, lkPropertiesOptions, jsonFormat, customVars, 0);
+    }
+
+    /**
+     * Returns the Schema properties list defined in Linkar Schemas or the file dictionaries, in a asynchronous way with JSON output format.
+     * <p>
+	 * Example:
+     * <pre>
+	 * import linkar.*;
+	 * import linkar.functions.*;
+	 * import linkar.functions.persistent.json.*;
+	 * 
+	 * public class Test {
+	 *	
+	 *	public String MyLkPropertiesAsync()
+	 *	{
+	 *		String result = "";
+	 *		try{
+	 *			CredentialOptions credentials = new CredentialOptions("127.0.0.1", "EPNAME", 11300, "admin", "admin");
+	 * 			LinkarClient client = new LinkarClient();
+	 * 			client.Login(credentials);
+	 *			LkPropertiesOptions options = new LkPropertiesOptions();
+	 *			result = client.LkPropertiesAsync("LK.CUSTOMERS", options, JSON_FORMAT.JSON).getNow(result);
+	 * 			client.Logout();			
+	 *		}
+	 *		catch (Exception ex)
+	 *		{
+	 *			String error = ex.getMessage();
+	 *			// Do something
+	 *		}
+	 *		return result;
+	 *	}
+	 * }
+	 * </pre>
+     * @param filename File name to LkProperties
+     * @param lkPropertiesOptions This object defines the different options in base of the asked Schema Type: LKSCHEMAS, SQLMODE o DICTIONARIES.
+	 * @param jsonFormat Specifies the desired output format: standard JSON, JSON_DICT format, or JSON_SCH format.
+     * @return The results of the operation.
+     * @throws Exception
+     */
+    public CompletableFuture<String> LkPropertiesAsync(String filename, LkPropertiesOptions lkPropertiesOptions,
+		JSON_FORMAT jsonFormat) throws Exception
+    {
+    	return LkPropertiesAsync(filename, lkPropertiesOptions, jsonFormat, "");
     }
     
     /**
@@ -6365,7 +6475,7 @@ public class LinkarClient
 	 * 			LinkarClient client = new LinkarClient();
 	 * 			client.Login(credentials);
 	 *			LkPropertiesOptions options = new LkPropertiesOptions();
-	 *			result = client.LkPropertiesAsync("LK.CUSTOMERS",options).getNow(result);
+	 *			result = client.LkPropertiesAsync("LK.CUSTOMERS", options).getNow(result);
 	 * 			client.Logout();			
 	 *		}
 	 *		catch (Exception ex)
@@ -6384,7 +6494,7 @@ public class LinkarClient
      */
     public CompletableFuture<String> LkPropertiesAsync(String filename, LkPropertiesOptions lkPropertiesOptions) throws Exception
     {
-    	return LkPropertiesAsync(filename, lkPropertiesOptions, "");
+    	return LkPropertiesAsync(filename, lkPropertiesOptions, JSON_FORMAT.JSON);
     }
     
     /**

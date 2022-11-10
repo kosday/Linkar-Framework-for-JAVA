@@ -2189,6 +2189,7 @@ public class LinkarClient
 	 * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
 	 * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
 	 * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
 	 * </ul>
      * <p>
 	 * Example:
@@ -2249,6 +2250,7 @@ public class LinkarClient
 	 * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
 	 * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
 	 * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
 	 * </ul>
      * <p>
 	 * Example:
@@ -2491,7 +2493,7 @@ public class LinkarClient
      */
     public String LkProperties(String filename, LkPropertiesOptions lkPropertiesOptions, String customVars, int receiveTimeout) throws Exception
     {
-        return this.LinkarClt.LkProperties(filename, lkPropertiesOptions, DATAFORMATSCH_TYPE.MV, customVars, receiveTimeout);
+        return this.LinkarClt.LkProperties(filename, lkPropertiesOptions, DATAFORMATSCHPROP_TYPE.MV, customVars, receiveTimeout);
     }
     
     /**
@@ -4923,6 +4925,7 @@ public class LinkarClient
 	 * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
 	 * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
 	 * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
 	 * </ul>
      * <p>
 	 * Example:
@@ -4989,6 +4992,7 @@ public class LinkarClient
 	 * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
 	 * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
 	 * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
 	 * </ul>
      * <p>
 	 * Example:
@@ -5239,7 +5243,7 @@ public class LinkarClient
     {
     	return CompletableFuture.supplyAsync(() -> {
 				try {
-					return this.LinkarClt.LkProperties(filename, lkPropertiesOptions, DATAFORMATSCH_TYPE.MV, customVars, receiveTimeout);
+					return this.LinkarClt.LkProperties(filename, lkPropertiesOptions, DATAFORMATSCHPROP_TYPE.MV, customVars, receiveTimeout);
 				} catch (Exception e) {
 					throw new CompletionException(e);
 				}

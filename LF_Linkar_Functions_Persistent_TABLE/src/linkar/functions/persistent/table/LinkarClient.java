@@ -5,6 +5,7 @@ import java.util.concurrent.CompletionException;
 
 import linkar.CredentialOptions;
 import linkar.functions.DATAFORMATSCH_TYPE;
+import linkar.functions.DATAFORMATSCHPROP_TYPE;
 import linkar.functions.LkPropertiesOptions;
 import linkar.functions.LkSchemasOptions;
 import linkar.functions.TableOptions;
@@ -360,7 +361,7 @@ public class LinkarClient {
      */
     public String LkProperties(String filename, LkPropertiesOptions lkPropertiesOptions, String customVars, int receiveTimeout) throws Exception
     {
-        return this.LinkarClt.LkProperties(filename, lkPropertiesOptions, DATAFORMATSCH_TYPE.TABLE, customVars, receiveTimeout);
+        return this.LinkarClt.LkProperties(filename, lkPropertiesOptions, DATAFORMATSCHPROP_TYPE.TABLE, customVars, receiveTimeout);
     }
     
     /**
@@ -1192,7 +1193,7 @@ public class LinkarClient {
     {
     	return CompletableFuture.supplyAsync(() -> {
 			try {
-				return this.LinkarClt.LkProperties(filename, lkPropertiesOptions, DATAFORMATSCH_TYPE.TABLE, customVars, receiveTimeout);
+				return this.LinkarClt.LkProperties(filename, lkPropertiesOptions, DATAFORMATSCHPROP_TYPE.TABLE, customVars, receiveTimeout);
 			} catch (Exception e) {
 				throw new CompletionException(e);
 			}

@@ -60,7 +60,7 @@ public class Functions
 	 * @param records It's the records codes list to read.
 	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
 	 * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
-	 * @param xmlFormat Different XML output formats.
+	 * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
 	 * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
 	 * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
 	 * @return The results of the operation.
@@ -114,7 +114,7 @@ public class Functions
 	 * @param records It's the records codes list to read.
 	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
 	 * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
-	 * @param xmlFormat Different XML output formats.
+	 * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
 	 * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
 	 * @return The results of the operation.
 	 * @throws Exception
@@ -167,7 +167,7 @@ public class Functions
 	 * @param records It's the records codes list to read.
 	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
 	 * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
-	 * @param xmlFormat Different XML output formats.
+	 * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
 	 * @return The results of the operation.
 	 * @throws Exception
 	 */
@@ -374,7 +374,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -437,7 +437,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
@@ -499,7 +499,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @return The results of the operation.
      * @throws Exception
      */
@@ -675,7 +675,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -736,7 +736,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
@@ -796,7 +796,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @return The results of the operation.
      * @throws Exception
      */
@@ -965,7 +965,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to write. Inside this String are the recordIds, and the records.
      * @param newOptions Object that defines the following writing options of the Function: recordIdType, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -1023,7 +1023,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to write. Inside this String are the recordIds, and the records.
      * @param newOptions Object that defines the following writing options of the Function: recordIdType, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
@@ -1080,7 +1080,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to write. Inside this String are the recordIds, and the records.
      * @param newOptions Object that defines the following writing options of the Function: recordIdType, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @return The results of the operation.
      * @throws Exception
      */
@@ -1471,7 +1471,7 @@ public class Functions
      * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -1525,7 +1525,7 @@ public class Functions
      * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
@@ -1578,7 +1578,7 @@ public class Functions
      * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @return The results of the operation.
      * @throws Exception
      */
@@ -2523,6 +2523,7 @@ public class Functions
      * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
      * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
      * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
      * </ul>
      * <p>
 	 * Example:
@@ -2581,6 +2582,7 @@ public class Functions
      * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
      * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
      * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
      * </ul>
      * <p>
 	 * Example:
@@ -2792,7 +2794,7 @@ public class Functions
 	 *		try{
 	 *			CredentialOptions credentials = new CredentialOptions("127.0.0.1", "EPNAME", 11300, "admin", "admin");
 	 *			LkPropertiesOptions options = new LkPropertiesOptions();
-	 *			result = Functions.LkProperties(credentials, "LK.CUSTOMERS",options, "", 60);			
+	 *			result = Functions.LkProperties(credentials, "LK.CUSTOMERS", options, XML_FORMAT.XML, "", 60);			
 	 *		}
 	 *		catch (Exception ex)
 	 *		{
@@ -2806,15 +2808,22 @@ public class Functions
      * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
      * @param filename File name to LkProperties
      * @param lkPropertiesOptions This object defines the different options in base of the asked Schema Type: LKSCHEMAS, SQLMODE o DICTIONARIES.
+	 * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
      * @throws Exception
      */
     public static String LkProperties(CredentialOptions credentialOptions, String filename, LkPropertiesOptions lkPropertiesOptions,
-        String customVars, int receiveTimeout) throws Exception
+        XML_FORMAT xmlFormat, String customVars, int receiveTimeout) throws Exception
     {
-        return DirectFunctions.LkProperties(credentialOptions, filename, lkPropertiesOptions, DATAFORMATSCH_TYPE.XML, customVars, receiveTimeout);
+		DATAFORMATSCHPROP_TYPE outputFormat = DATAFORMATSCHPROP_TYPE.XML;
+		if(xmlFormat == XML_FORMAT.XML_DICT)
+			outputFormat = DATAFORMATSCHPROP_TYPE.XML_DICT;
+		else if(xmlFormat == XML_FORMAT.XML_SCH)
+			outputFormat = DATAFORMATSCHPROP_TYPE.XML_SCH;
+		
+        return DirectFunctions.LkProperties(credentialOptions, filename, lkPropertiesOptions, outputFormat, customVars, receiveTimeout);
     }
     
     /**
@@ -2834,7 +2843,7 @@ public class Functions
 	 *		try{
 	 *			CredentialOptions credentials = new CredentialOptions("127.0.0.1", "EPNAME", 11300, "admin", "admin");
 	 *			LkPropertiesOptions options = new LkPropertiesOptions();
-	 *			result = Functions.LkProperties(credentials, "LK.CUSTOMERS",options, "");			
+	 *			result = Functions.LkProperties(credentials, "LK.CUSTOMERS", options, XML_FORMAT.XML, "");			
 	 *		}
 	 *		catch (Exception ex)
 	 *		{
@@ -2848,16 +2857,58 @@ public class Functions
      * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
      * @param filename File name to LkProperties
      * @param lkPropertiesOptions This object defines the different options in base of the asked Schema Type: LKSCHEMAS, SQLMODE o DICTIONARIES.
+	 * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
      */
     public static String LkProperties(CredentialOptions credentialOptions, String filename, LkPropertiesOptions lkPropertiesOptions,
-        String customVars) throws Exception
+        XML_FORMAT xmlFormat, String customVars) throws Exception
     {
-        return LkProperties(credentialOptions, filename, lkPropertiesOptions, customVars, 0);
+        return LkProperties(credentialOptions, filename, lkPropertiesOptions, xmlFormat, customVars, 0);
     }
     
+    /**
+     * Returns the Schema properties list defined in Linkar Schemas or the file dictionaries, in a synchronous way with XML output format.
+     * <p>
+	 * Example:
+     * <pre>
+	 * import linkar.*;
+	 * import linkar.functions.*;
+	 * import linkar.functions.direct.xml.*;
+	 * 
+	 * public class Test {
+	 *	
+	 *	public String MyLkProperties()
+	 *	{
+	 *		String result = "";
+	 *		try{
+	 *			CredentialOptions credentials = new CredentialOptions("127.0.0.1", "EPNAME", 11300, "admin", "admin");
+	 *			LkPropertiesOptions options = new LkPropertiesOptions();
+	 *			result = Functions.LkProperties(credentials, "LK.CUSTOMERS", options, XML_FORMAT.XML);			
+	 *		}
+	 *		catch (Exception ex)
+	 *		{
+	 *			String error = ex.getMessage();
+	 *			// Do something
+	 *		}
+	 *		return result;
+	 *	}
+	 * }
+	 * </pre>
+     * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
+     * @param filename File name to LkProperties
+     * @param lkPropertiesOptions This object defines the different options in base of the asked Schema Type: LKSCHEMAS, SQLMODE o DICTIONARIES.
+	 * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
+     * @return The results of the operation.
+     * @throws Exception
+     */
+    public static String LkProperties(CredentialOptions credentialOptions, String filename, LkPropertiesOptions lkPropertiesOptions,
+		XML_FORMAT xmlFormat) throws Exception
+    {
+        return LkProperties(credentialOptions, filename, lkPropertiesOptions, xmlFormat, "");
+    }
+
     /**
      * Returns the Schema properties list defined in Linkar Schemas or the file dictionaries, in a synchronous way with XML output format.
      * <p>
@@ -2894,7 +2945,7 @@ public class Functions
      */
     public static String LkProperties(CredentialOptions credentialOptions, String filename, LkPropertiesOptions lkPropertiesOptions) throws Exception
     {
-        return LkProperties(credentialOptions, filename, lkPropertiesOptions, "");
+        return LkProperties(credentialOptions, filename, lkPropertiesOptions, XML_FORMAT.XML);
     }
     
     /**
@@ -3056,7 +3107,7 @@ public class Functions
 	 * @param records It's the records codes list to read.
 	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
 	 * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
-	 * @param xmlFormat Different XML output formats.
+	 * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
 	 * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviors in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
 	 * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
 	 * @return The results of the operation.
@@ -3116,7 +3167,7 @@ public class Functions
 	 * @param records It's the records codes list to read.
 	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
 	 * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
-	 * @param xmlFormat Different XML output formats.
+	 * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
 	 * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviors in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
 	 * @return The results of the operation.
 	 * @throws Exception
@@ -3169,7 +3220,7 @@ public class Functions
 	 * @param records It's the records codes list to read.
 	 * @param dictionaries List of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. You may use the format LKFLDx where x is the attribute number.
 	 * @param readOptions Object that defines the different reading options of the Function: Calculated, dictClause, conversion, formatSpec, originalRecords.
-	 * @param xmlFormat Different XML output formats.
+	 * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
 	 * @return The results of the operation.
 	 * @throws Exception
 	 */
@@ -3376,7 +3427,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -3444,7 +3495,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      */
@@ -3505,7 +3556,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @return The results of the operation.
      */
     public static CompletableFuture<String> UpdateAsync(CredentialOptions credentialOptions, String filename, String records, UpdateOptions updateOptions,
@@ -3679,7 +3730,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -3745,7 +3796,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      */
@@ -3804,7 +3855,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to update. Inside this String are the recordIds, the records, and the originalRecords.
      * @param updateOptions Object that defines the different writing options of the Function: optimisticLockControl, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @return The results of the operation.
      */
     public static CompletableFuture<String> UpdatePartialAsync(CredentialOptions credentialOptions, String filename, String records, UpdateOptions updateOptions,
@@ -3971,7 +4022,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to write. Inside this String are the recordIds, and the records.
      * @param newOptions Object that defines the following writing options of the Function: recordIdType, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -4034,7 +4085,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to write. Inside this String are the recordIds, and the records.
      * @param newOptions Object that defines the following writing options of the Function: recordIdType, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      */
@@ -4090,7 +4141,7 @@ public class Functions
      * @param filename File name where you are going to write.
      * @param records Are the records you want to write. Inside this String are the recordIds, and the records.
      * @param newOptions Object that defines the following writing options of the Function: recordIdType, readAfter, calculated, dictionaries, conversion, formatSpec, originalRecords.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @return The results of the operation.
      */
     public static CompletableFuture<String> NewAsync(CredentialOptions credentialOptions, String filename, String records, NewOptions newOptions,
@@ -4480,7 +4531,7 @@ public class Functions
      * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
@@ -4539,7 +4590,7 @@ public class Functions
      * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      */
@@ -4591,7 +4642,7 @@ public class Functions
      * @param dictClause Is the list of dictionaries to read, separated by space. If dictionaries are not indicated the function will read the complete buffer. For example CUSTOMER DATE ITEM. You may use the format LKFLDx where x is the attribute number.
      * @param preSelectClause It's an optional statement that will execute before the main Select
      * @param selectOptions Object that defines the different reading options of the Function: calculated, dictionaries, conversion, formatSpec, originalRecords, onlyItemId, pagination, regPage, numPage.
-     * @param xmlFormat Different XML output formats.
+     * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @return The results of the operation.
      */
     public static CompletableFuture<String> SelectAsync(CredentialOptions credentialOptions, String filename, String selectClause, String sortClause, String dictClause, String preSelectClause, SelectOptions selectOptions,
@@ -5544,6 +5595,7 @@ public class Functions
      * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
      * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
      * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
      * </ul>
      * <p>
 	 * Example:
@@ -5607,6 +5659,7 @@ public class Functions
      * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
      * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
      * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
      * </ul>
      * <p>
 	 * Example:
@@ -5833,16 +5886,17 @@ public class Functions
      * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
      * @param filename File name to LkProperties
      * @param lkPropertiesOptions This object defines the different options in base of the asked Schema Type: LKSCHEMAS, SQLMODE o DICTIONARIES.
+	 * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
      */
     public static CompletableFuture<String> LkPropertiesAsync(CredentialOptions credentialOptions, String filename, LkPropertiesOptions lkPropertiesOptions,
-        String customVars, int receiveTimeout)
+        XML_FORMAT xmlFormat, String customVars, int receiveTimeout)
     {
     	return CompletableFuture.supplyAsync(() -> {
 				try {
-					return Functions.LkProperties(credentialOptions, filename, lkPropertiesOptions, customVars, receiveTimeout);
+					return Functions.LkProperties(credentialOptions, filename, lkPropertiesOptions, xmlFormat, customVars, receiveTimeout);
 				} catch (Exception e) {
 					throw new CompletionException(e);
 				}
@@ -5880,15 +5934,16 @@ public class Functions
      * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
      * @param filename File name to LkProperties
      * @param lkPropertiesOptions This object defines the different options in base of the asked Schema Type: LKSCHEMAS, SQLMODE o DICTIONARIES.
+	 * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      */
     public static CompletableFuture<String> LkPropertiesAsync(CredentialOptions credentialOptions, String filename, LkPropertiesOptions lkPropertiesOptions,
-        String customVars)
+        XML_FORMAT xmlFormat, String customVars)
     {
-    	return LkPropertiesAsync(credentialOptions, filename, lkPropertiesOptions, customVars, 0);
+    	return LkPropertiesAsync(credentialOptions, filename, lkPropertiesOptions, xmlFormat, customVars, 0);
     }
-    
+
     /**
      * Returns the Schema properties list defined in Linkar Schemas or the file dictionaries, in a asynchronous way with XML output format.
      * <p>
@@ -5920,11 +5975,51 @@ public class Functions
      * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
      * @param filename File name to LkProperties
      * @param lkPropertiesOptions This object defines the different options in base of the asked Schema Type: LKSCHEMAS, SQLMODE o DICTIONARIES.
+	 * @param xmlFormat Specifies the desired output format: standard XML, XML_DICT format, or XML_SCH format.
+     * @return The results of the operation.
+     */
+    public static CompletableFuture<String> LkPropertiesAsync(CredentialOptions credentialOptions, String filename, LkPropertiesOptions lkPropertiesOptions,
+		XML_FORMAT xmlFormat)
+    {
+    	return LkPropertiesAsync(credentialOptions, filename, lkPropertiesOptions, xmlFormat, "");
+    }
+    
+    /**
+     * Returns the Schema properties list defined in Linkar Schemas or the file dictionaries, in a asynchronous way with XML output format.
+     * <p>
+	 * Example:
+     * <pre>
+	 * import linkar.*;
+	 * import linkar.functions.*;
+	 * import linkar.functions.direct.xml.*;
+	 * 
+	 * public class Test {
+	 *	
+	 *	public String MyLkPropertiesAsync()
+	 *	{
+	 *		String result = "";
+	 *		try{
+	 *			CredentialOptions credentials = new CredentialOptions("127.0.0.1", "EPNAME", 11300, "admin", "admin");
+	 *			LkPropertiesOptions options = new LkPropertiesOptions();
+	 *			result = Functions.LkPropertiesAsync(credentials, "LK.CUSTOMERS", options, XML_FORMAT.XML).getNow(result);			
+	 *		}
+	 *		catch (Exception ex)
+	 *		{
+	 *			String error = ex.getMessage();
+	 *			// Do something
+	 *		}
+	 *		return result;
+	 *	}
+	 * }
+	 * </pre>
+     * @param credentialOptions Object that defines the necessary data to access to the Linkar Server: Username, Password, EntryPoint, Language, FreeText.
+     * @param filename File name to LkProperties
+     * @param lkPropertiesOptions This object defines the different options in base of the asked Schema Type: LKSCHEMAS, SQLMODE o DICTIONARIES.
      * @return The results of the operation.
      */
     public static CompletableFuture<String> LkPropertiesAsync(CredentialOptions credentialOptions, String filename, LkPropertiesOptions lkPropertiesOptions)
     {
-    	return LkPropertiesAsync(credentialOptions, filename, lkPropertiesOptions, "");
+    	return LkPropertiesAsync(credentialOptions, filename, lkPropertiesOptions, XML_FORMAT.XML, "");
     }
     
     /**

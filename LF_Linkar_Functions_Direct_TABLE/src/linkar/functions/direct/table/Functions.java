@@ -5,6 +5,7 @@ import java.util.concurrent.CompletionException;
 
 import linkar.CredentialOptions;
 import linkar.functions.DATAFORMATSCH_TYPE;
+import linkar.functions.DATAFORMATSCHPROP_TYPE;
 import linkar.functions.LkPropertiesOptions;
 import linkar.functions.LkSchemasOptions;
 import linkar.functions.TableOptions;
@@ -247,7 +248,7 @@ public class Functions {
     public static String LkProperties(CredentialOptions credentialOptions, String filename, LkPropertiesOptions lkPropertiesOptions,
         String customVars, int receiveTimeout) throws Exception
     {
-        return DirectFunctions.LkProperties(credentialOptions, filename, lkPropertiesOptions, DATAFORMATSCH_TYPE.TABLE, customVars, receiveTimeout);
+        return DirectFunctions.LkProperties(credentialOptions, filename, lkPropertiesOptions, DATAFORMATSCHPROP_TYPE.TABLE, customVars, receiveTimeout);
     }
     
     /**

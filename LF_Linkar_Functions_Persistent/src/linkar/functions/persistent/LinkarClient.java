@@ -1433,6 +1433,7 @@ public class LinkarClient
 	 * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
 	 * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
 	 * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
 	 * </ul>
      * @param outputFormat Indicates in what format you want to receive the data resulting from the operation: MV, XML or JSON.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
@@ -1471,6 +1472,7 @@ public class LinkarClient
 	 * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
 	 * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
 	 * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
 	 * </ul>
      * @param outputFormat Indicates in what format you want to receive the data resulting from the operation: MV, XML or JSON.
      * @return The results of the operation.
@@ -1503,6 +1505,7 @@ public class LinkarClient
 	 * <li>OTHERLANGUAGES: Languages list separated by commas.</li>
 	 * <li>TABLEROWSEPARATOR: It is the decimal char that you use to separate the rows in the output table format. By default 11.</li>
 	 * <li>TABLECOLSEPARATOR: It is the decimal char that you use to separate the columns in the output table format. By default 9.</li>
+	 * <li>CONVERTNUMBOOLJSON: Switch to create numeric and boolean data in JSON strings. Default is false.</li>
 	 * </ul>
      * @return The results of the operation.
      * @throws Exception
@@ -1627,13 +1630,15 @@ public class LinkarClient
 	 * </ul>
      * @param filename File name to LkProperties
      * @param lkPropertiesOptions This object defines the different options in base of the asked Schema Type: LKSCHEMAS, SQLMODE o DICTIONARIES.
-     * @param outputFormat Indicates in what format you want to receive the data resulting from the operation: MV, XML, JSON or TABLE.
+     * @param outputFormat Indicates in what format you want to receive the data resulting from the operation: MV, XML, XML_DICT, XML_SCH, JSON, JSON_DICT, JSON_SCH or TABLE.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @param receiveTimeout It's the maximum time in seconds that the client will keep waiting the answer by the server. By default 0 (wait indefinitely).
      * @return The results of the operation.
      * @throws Exception
      */
-    public String LkProperties(String filename, LkPropertiesOptions lkPropertiesOptions, DATAFORMATSCH_TYPE outputFormat, String customVars, int receiveTimeout) throws Exception
+    public String LkProperties(String filename, LkPropertiesOptions lkPropertiesOptions,
+		DATAFORMATSCHPROP_TYPE outputFormat,
+		String customVars, int receiveTimeout) throws Exception
     {
         String lkPropertiesArgs = OperationArguments.GetLkPropertiesArgs(filename, lkPropertiesOptions, customVars);
         byte opCode = OPERATION_CODE.LKPROPERTIES.getnumVal();
@@ -1654,12 +1659,12 @@ public class LinkarClient
 	 * </ul>
      * @param filename File name to LkProperties
      * @param lkPropertiesOptions This object defines the different options in base of the asked Schema Type: LKSCHEMAS, SQLMODE o DICTIONARIES.
-     * @param outputFormat Indicates in what format you want to receive the data resulting from the operation: MV, XML, JSON or TABLE.
+     * @param outputFormat Indicates in what format you want to receive the data resulting from the operation: MV, XML, XML_DICT, XML_SCH, JSON, JSON_DICT, JSON_SCH or TABLE.
      * @param customVars It's a free text that will travel until the database to make the admin being able to manage additional behaviours in the standard routine SUB.LK.MAIN.CONTROL.CUSTOM. This routine will be called if the argument has content.
      * @return The results of the operation.
      * @throws Exception
      */
-    public String LkProperties(String filename, LkPropertiesOptions lkPropertiesOptions, DATAFORMATSCH_TYPE outputFormat, String customVars) throws Exception
+    public String LkProperties(String filename, LkPropertiesOptions lkPropertiesOptions, DATAFORMATSCHPROP_TYPE outputFormat, String customVars) throws Exception
     {
         return LkProperties(filename, lkPropertiesOptions, outputFormat, customVars, 0);
     }
@@ -1675,11 +1680,11 @@ public class LinkarClient
 	 * </ul>
      * @param filename File name to LkProperties
      * @param lkPropertiesOptions This object defines the different options in base of the asked Schema Type: LKSCHEMAS, SQLMODE o DICTIONARIES.
-     * @param outputFormat Indicates in what format you want to receive the data resulting from the operation: MV, XML, JSON or TABLE.
+     * @param outputFormat Indicates in what format you want to receive the data resulting from the operation: MV, XML, XML_DICT, XML_SCH, JSON, JSON_DICT, JSON_SCH or TABLE.
      * @return The results of the operation.
      * @throws Exception
      */
-    public String LkProperties(String filename, LkPropertiesOptions lkPropertiesOptions, DATAFORMATSCH_TYPE outputFormat) throws Exception
+    public String LkProperties(String filename, LkPropertiesOptions lkPropertiesOptions, DATAFORMATSCHPROP_TYPE outputFormat) throws Exception
     {
         return LkProperties(filename, lkPropertiesOptions, outputFormat, "");
     }
@@ -1700,7 +1705,7 @@ public class LinkarClient
      */
     public String LkProperties(String filename, LkPropertiesOptions lkPropertiesOptions) throws Exception
     {
-        return LkProperties(filename, lkPropertiesOptions, DATAFORMATSCH_TYPE.MV);
+        return LkProperties(filename, lkPropertiesOptions, DATAFORMATSCHPROP_TYPE.MV);
     }
     
     /**
